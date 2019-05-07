@@ -1,0 +1,29 @@
+#application.yml
+server:
+   port: 8087
+   servlet:
+     #项目访问名称
+     context-path: /DemoOne
+
+spring:
+   mvc:
+     view:
+       prefix: /WEB-INF/jsp/
+       suffix: .jsp
+
+   datasource:
+       url: jdbc:mysql://localhost:3306/studentdb?useUnicode=true&characterEncoding=UTF-8  #  数据库连接地址
+       username: root  # 用户名
+       password: root  # 密码
+       # 使用druid数据源
+       type: com.alibaba.druid.pool.DruidDataSource  #  配置当前要使用的数据源的操作类型
+       driver-class-name: com.mysql.cj.jdbc.Driver    #  配置mysql的驱动程序类com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml    # 映射文件
+  type-aliases-package: com.ceshi.demo.entity # 起别名。可省略写mapper的xml中的resultType的全路径
+
+
+
+
+
